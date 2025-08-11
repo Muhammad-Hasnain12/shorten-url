@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { 
   generateShortCode, 
   isValidUrl, 
@@ -55,7 +56,7 @@ export default function UrlShortener() {
       UrlStorage.save(newShortenedUrl);
       setShortenedUrl(newShortenedUrl);
       setUrl('');
-    } catch (err) {
+    } catch {
       setError('Failed to create shortened URL. Please try again.');
     } finally {
       setIsLoading(false);
@@ -216,10 +217,12 @@ export default function UrlShortener() {
           {showQR && (
             <div className="pt-4 border-t border-border">
               <div className="flex flex-col items-center space-y-3">
-                <img
+                <Image
                   src={generateQRCodeUrl(getShortUrl())}
                   alt="QR Code"
-                  className="w-32 h-32 border border-border rounded-lg"
+                  width={128}
+                  height={128}
+                  className="border border-border rounded-lg"
                 />
                 <p className="text-sm text-muted-foreground text-center">
                   Scan to open the shortened URL

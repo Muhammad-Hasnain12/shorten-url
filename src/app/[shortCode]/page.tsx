@@ -34,7 +34,7 @@ export default function ShortUrlRedirect() {
     // Redirect to the original URL
     try {
       window.location.href = shortenedUrl.originalUrl;
-    } catch (err) {
+    } catch {
       setError('Failed to redirect');
       setIsLoading(false);
     }

@@ -27,7 +27,7 @@ export default function AboutPage() {
               </div>
               <h3 className="text-lg font-semibold text-card-foreground mb-2">1. Paste Your URL</h3>
               <p className="text-muted-foreground text-sm">
-                Simply paste any long URL into our input field. We'll automatically validate 
+                Simply paste any long URL into our input field. We&apos;ll automatically validate 
                 and normalize it for you.
               </p>
             </div>
@@ -166,8 +166,8 @@ export default function AboutPage() {
               <div>
                 <h4 className="font-semibold text-card-foreground mb-2">Storage</h4>
                 <p className="text-sm text-muted-foreground">
-                  All shortened URLs are stored locally in your browser's localStorage. 
-                  This means your data stays private and works offline.
+                                     All shortened URLs are stored locally in your browser&apos;s localStorage. 
+                   This means your data stays private and works offline.
                 </p>
               </div>
               
