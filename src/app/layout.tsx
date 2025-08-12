@@ -59,14 +59,16 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
-                try {
-                  var theme = localStorage.getItem('theme') || 'system';
-                  var effectiveTheme = theme === 'system' 
-                    ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
-                    : theme;
-                  document.documentElement.classList.add(effectiveTheme);
-                  document.documentElement.setAttribute('data-theme', effectiveTheme);
-                } catch (e) {}
+                if (typeof window !== 'undefined') {
+                  try {
+                    var theme = localStorage.getItem('theme') || 'system';
+                    var effectiveTheme = theme === 'system' 
+                      ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+                      : theme;
+                    document.documentElement.classList.add(effectiveTheme);
+                    document.documentElement.setAttribute('data-theme', effectiveTheme);
+                  } catch (e) {}
+                }
               })();
             `,
           }}
