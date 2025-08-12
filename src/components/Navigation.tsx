@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import ThemeToggle from './ThemeToggle';
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -24,7 +25,7 @@ export default function Navigation() {
             </span>
           </Link>
 
-          {/* Navigation Links */}
+          {/* Navigation Links and Theme Toggle */}
           <div className="flex items-center space-x-1">
             <Link
               href="/"
@@ -46,6 +47,7 @@ export default function Navigation() {
             >
               About
             </Link>
+            <ThemeToggle />
           </div>
         </div>
       </div>
